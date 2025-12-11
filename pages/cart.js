@@ -237,8 +237,8 @@ function Cart(props) {
     }
 
     const updateProductRquest = () => {
-        if(selectedAnswer.isSafeparcel === ''||selectedAnswer.issign === ''){
-            props.toaster({ type: "error", message: 'Please provide all required detail.'});
+        if (selectedAnswer.isSafeparcel === '' || selectedAnswer.issign === '') {
+            props.toaster({ type: "error", message: 'Please provide all required detail.' });
             return
         }
         props.loader(true);
@@ -383,7 +383,7 @@ function Cart(props) {
                                 <div className='flex flex-row  justify-start md:items-center gap-1'>
                                     <img className='md:h-[160px] text-gray-500 h-[100px] md:w-full w-[100px]'
                                         src={item?.varients?.[0].image[0] || '/default-product-image.png'}
-                                        alt={item.category.name == "Candles" || "Fragrance" ? "Variety of XO Candles’ handmade soy candles, fragrances, and perfumes" : ""}
+                                        alt={item?.category?.name == "Candles" || "Fragrance" ? "Variety of XO Candles’ handmade soy candles, fragrances, and perfumes" : ""}
                                         onError={imageOnError} />
                                     <div className='w-full '>
                                         <p className='text-black font-normal md:text-base text-xs md:ml-5 md:pt-0 pt-2'>{item?.name}</p>
